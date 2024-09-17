@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <persistence-unit name="pu">
+        <class>com.busBooking.BusData</class>
+        <class>com.busBooking.BusTravelData</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/busBooking" />
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="manager" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.format_sql" value="true"/>
+<!--            <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"/>-->
+            <!--property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" /-->
+        </properties>
+    </persistence-unit>
+
+</persistence>

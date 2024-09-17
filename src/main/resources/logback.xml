@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set the root logging level to ERROR to suppress general info logs -->
+    <root level="error">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- Suppress specific Hibernate WARN logs -->
+    <logger name="org.hibernate" level="error"/>
+    <logger name="org.hibernate.SQL" level="error"/>
+
+    <!-- Additional Hibernate packages responsible for warnings -->
+    <logger name="org.hibernate.jpa" level="error"/>
+    <logger name="org.hibernate.cfg" level="error"/>
+    <logger name="org.hibernate.tool.hbm2ddl" level="error"/>
+    <logger name="org.hibernate.engine" level="error"/>
+    <logger name="org.hibernate.dialect" level="error"/>
+    <logger name="org.hibernate.cache" level="error"/>
+    <logger name="org.hibernate.transaction" level="error"/>
+</configuration>
+
